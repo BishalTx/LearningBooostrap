@@ -233,9 +233,19 @@
                         </a>
                         <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon"></span>
                         </a>
+                        <div class="btn-group" id="carouselButton">
+                            <button class="btn btn-danger btn-sm" id="carousel-pause">
+                                <span class="fa fa-pause"></span>
+                            </button>
+                            <button class="btn btn-danger btn-sm" id="carousel-play">
+                                <span class="fa fa-play"></span>
+                            </button>
+                        </div>
+           
                     </div>
              </div>
          </div>
+        
     <div class = "row row-content align items-center">
         <div class = "col-12 col-sm-4 order-sm-last col-md-3">
             
@@ -290,92 +300,7 @@
         </div>
     </div>
     
-    <div class ="card-deck" >
-        <div class="col-3 col-sm-3 col-md-3 col-l-3 col-xl-3"></div>
-        <div class="col col-sm col-md-6 col-l-6 col-xl-6">
-            <div class="card" id="card" >
-                <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-                    <div class="card-body">
-                        <dl class="row">
-                            <dt class="col col-sm col-m-6 col-l-6 col-xl-6">Number of Guests</dt>
-                                <dd class="col-1">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            1
-                                        </label>
-                                    </div>
-                                </dd>
-                                <dd class="col-1" >
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            2
-                                        </label>
-                                    </div>
-                                </dd>
-                                <dd class="col-1" >
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            3
-                                        </label>
-                                </dd>
-                                <dd class="col-1" >
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            4 
-                                        </label>
-                                    <div>
-                                </dd>
-                                <dd class="col-1" >
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                5 
-                                            </label>
-                                </dd>
-                                <dd class="col-1" >
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                6 
-                                            </label>
-                                    </div>    
-                                </dd>
-                            </dt>
-                   
-            
-                            <dt class="col">Date and Time</dt>
-                                <dd>
-                                    <div class="form-group row">
-                                        <label for="date" class="col-md col-form-label"></label>
-                                            <div class="col-md" >
-                                                <input type="date" class="form-control" id ="date" name="date" placeholder="Date">
-                        
-                                            </div>
-                                            <div class="col-md" >
-                                                <input type="time" class="form-control" id ="time" name="date" placeholder="Time">
-                       
-                                            </div>
-                                        </label>
-                                    </div>
-                                </dd>
-                            </dt>
-                            
-                            <div class=" col-12 form-group row">
-                                <div class="offset-md-5 col-md-10">
-                                    <button type="submit" class="btn btn-primary" > Reserve </button>
-                                </div>
-        
-                            </div>
-                   
-                        </dl>
-                    </div>
-            </div>
-         </div>
-    </div>
+    
    
 
     <footer class="footer">
@@ -423,7 +348,17 @@
      <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
      <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
      <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+     <script>
+        $(document).ready(function(){
+            $("#mycarousel").carousel( { interval: 1 } );
+            $("#carousel-pause").click(function(){
+                $("#mycarousel").carousel('pause');
+            });
+            $("#carousel-play").click(function(){
+                $("#mycarousel").carousel('cycle');
+            });
+        });
+    </script>
 </body>
 
 </html>
